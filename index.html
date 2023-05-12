@@ -1,13 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Home System</title>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div class="form" id="login-form">
+      <h2>Login</h2>
+      <div class="inputs">
+        <input type="text" id="username-input" placeholder="Enter Your Username">
+        <input type="text" id="password-input" placeholder="Enter Your Password">
+      </div>
+      <div class="buttons">
+        <button id="login-button">Login</button>
+        <button id="signup-toggle-button">Signup</button>
+      </div>
+    </div>
+    <div class="form" id="signup-form">
+      <h2>Signup</h2>
+      <div class="inputs">
+        <input type="text" id="signup-username-input" placeholder="Enter Your Username">
+        <input type="text" id="signup-password-input" placeholder="Enter Your Password">
+      </div>
+      <div class="buttons">
+        <button id="create-user-button">Signup</button>
+        <button id="login-toggle-button">Login</button>
+      </div>
+    </div>
+    <script type="module" src="/src/pages/login.ts"></script>
   </body>
+
 </html>
