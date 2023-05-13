@@ -14,11 +14,11 @@ app.get('/', (req, res) => {
 app.post('/handle_login', (req, res) => {
     const data = req.body
     console.log(req.body)
-    const users = JSON.parse(fs.readFileSync('users.json', 'utf8'))
+    const users = JSON.parse(fs.readFileSync('./databases/users.json', 'utf8'))
     const test = users.find((val) => val.username == data.username)
     if (test) {
         if (test.password == data.password) {
-            res.send({status:true})
+            res.send({status:true, id:test.id})
         } else {
             res.send({status:false})
         }
@@ -26,13 +26,29 @@ app.post('/handle_login', (req, res) => {
         res.send({status:false});
     }
 })
+function generateId(size=10){
+    let output = ""
+    const a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXZY"
+    for(let i=0;i<size;i++){
+        output += a[Math.floor(Math.random()*a.length)];
+    }
+    return(output);
+}
 app.post('/handle_signup', (req, res) => {
     const data = req.body;
-    const file = JSON.parse(fs.readFileSync('users.json','utf8'));
+    const file = JSON.parse(fs.readFileSync('./databases/users.json','utf8'));
+    const test = file.find((val)=>val.username == data.username)
+    if(test){
+        res.send({status:false})
+        return
+    }
+    data.id = generateId();
     file.push(data);
     console.log(data)
-    fs.writeFileSync('users.json', JSON.stringify(file))
-    res.send({status:true});
+    fs.writeFileSync('./databases/users.json', JSON.stringify(file))
+    fs.mkdirSync(`./databases/${data.id}`, {recursive:true})
+    fs.writeFileSync(`./databases/${data.id}/todos.json`, JSON.stringify([]))
+    res.send({status:true, id:data.id});
 })
 app.post('/handle_logout', (req, res) => { })
 
