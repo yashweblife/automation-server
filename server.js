@@ -11,6 +11,9 @@ app.use(bodyParser.json())
 app.get('/', (req, res) => {
     res.sendFile('index.html');
 })
+app.get('home',(req, res)=>{
+    res.sendFile('home.html')
+})
 app.post('/handle_login', (req, res) => {
     const data = req.body
     console.log(req.body)
