@@ -1,3 +1,4 @@
+import bodyParser from "body-parser";
 import express from 'express';
 import fs from "fs";
 import path from 'path';
@@ -6,30 +7,32 @@ const app = express();
 const port = 3000;
 const __dirname = path.dirname(new URL(import.meta.url).pathname)
 app.use(express.static(path.join(__dirname, 'dist')))
-
+app.use(bodyParser.json())
 app.get('/', (req, res) => {
     res.sendFile('index.html');
 })
 app.post('/handle_login', (req, res) => {
     const data = req.body
+    console.log(req.body)
     const users = JSON.parse(fs.readFileSync('users.json', 'utf8'))
     const test = users.find((val) => val.username == data.username)
     if (test) {
         if (test.password == data.password) {
-            res.send(true)
+            res.send({status:true})
         } else {
-            res.send(false)
+            res.send({status:false})
         }
     } else {
-        res.send(false);
+        res.send({status:false});
     }
 })
 app.post('/handle_signup', (req, res) => {
     const data = req.body;
     const file = JSON.parse(fs.readFileSync('users.json','utf8'));
     file.push(data);
+    console.log(data)
     fs.writeFileSync('users.json', JSON.stringify(file))
-    res.send(true);
+    res.send({status:true});
 })
 app.post('/handle_logout', (req, res) => { })
 
