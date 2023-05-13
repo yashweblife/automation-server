@@ -1,3 +1,4 @@
+import "../styles/login.scss"
 const signup_form = document.querySelector('#signup-form')
 const login_form = document.querySelector('#login-form')
 
