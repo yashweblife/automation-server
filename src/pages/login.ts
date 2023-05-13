@@ -1,6 +1,6 @@
 import "../styles/login.scss"
-const signup_form: HTMLElement = document.querySelector('#signup-form')!
 const login_form: HTMLElement = document.querySelector('#login-form')!
+const signup_form: HTMLElement = document.querySelector('#signup-form')!
 
 const login_button: HTMLButtonElement = document.querySelector("#login-button")!
 const signup_button: HTMLButtonElement = document.querySelector("#signup-button")!
@@ -19,13 +19,16 @@ function server_check_login() {
         username: username_input.value,
         password: password_input.value
     }
-    fetch('/login', {
+    console.log(data)
+    fetch('/handle_login', {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type':'application/json'
         },
         body: JSON.stringify(data)
-    }).then((res: Response) => {
+    })
+    .then((res:Response)=>res.json())
+    .then((res: Response) => {
         if (res) {
             console.log(res);
         }
@@ -36,13 +39,16 @@ function server_check_signup() {
         username: signup_username_input.value,
         password: signup_password_input.value
     }
-    fetch('/singup', {
+    console.log(data)
+    fetch('/handle_signup', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(data)
-    }).then((res: Response) => {
+    })
+    .then((data:Response)=>data.json())
+    .then((res: Response) => {
         if (res) {
             console.log(res)
         }
