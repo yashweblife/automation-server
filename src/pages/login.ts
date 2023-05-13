@@ -14,6 +14,15 @@ const signup_password_input: HTMLInputElement = document.querySelector('#signup-
 const signup_toggle: HTMLButtonElement = document.querySelector('#signup-toggle-button')!
 const login_toggle: HTMLButtonElement = document.querySelector('#login-toggle-button')!
 
+function handle_auth_check_complete(data:any){
+    if(data.status){
+        localStorage.setItem("user", data.id)
+        window.open("./home.html");
+    }else{
+        alert("Something went wrong")
+    }
+}
+
 function server_check_login() {
     const data = {
         username: username_input.value,
@@ -28,9 +37,9 @@ function server_check_login() {
         body: JSON.stringify(data)
     })
     .then((res:Response)=>res.json())
-    .then((res: Response) => {
+    .then((res: any) => {
         if (res) {
-            console.log(res);
+            handle_auth_check_complete(res)
         }
     })
 }
@@ -48,13 +57,12 @@ function server_check_signup() {
         body: JSON.stringify(data)
     })
     .then((data:Response)=>data.json())
-    .then((res: Response) => {
+    .then((res: any) => {
         if (res) {
-            console.log(res)
+            handle_auth_check_complete(res)
         }
     })
 }
-
 signup_toggle.addEventListener('click', () => {
     login_form.classList.add('display-off')
     signup_form.classList.remove('display-off')
