@@ -1,0 +1,73 @@
+{
+    "databases":{
+        "usersJSON":{
+            "type":"file",
+            "info":"This file contains the list of users",
+            "format":{
+                "id":"string",
+                "username":"string",
+                "password":"string"
+            }
+        },
+        "userInfo":{
+            "type":"folder",
+            "info":"Contains Indivisual User Information",
+            "format":{
+                "folderName<userID>":{
+                    "todosJSON":{
+                        "lists":[
+                            {
+                                "name":"string",
+                                "created":"string",
+                                "list":[
+                                    {
+                                        "name":"string",
+                                        "info":"string",
+                                        "completed":"boolean",
+                                        "date":"string",
+                                        "id":"string"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "membersJSON":[
+                        "userID"
+                    ],
+                    "notificationsJSON":[
+                        {
+                            "name":"string",
+                            "info":"string",
+                            "marked":"boolean",
+                            "date":"string",
+                            "id":"string"
+                        }
+                    ],
+                    "chatsJSON":[
+                        "chatID"
+                    ]
+                }
+            }
+        },
+        "chatInfo":{
+            "type":"folder",
+            "info":"Contains all chat",
+            "format":[
+                {
+                    "id":"string",
+                    "members":[
+                        "userID"
+                    ],
+                    "messages":[
+                        {
+                            "sender":"userID",
+                            "message":"string",
+                            "date":"string"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+    
+}

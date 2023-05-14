@@ -8,7 +8,8 @@ export default defineConfig({
       input:{
         index:'index.html',
         home:'home.html',
-        todolist:'todolist.html'
+        todolist:'todolist.html',
+        messages:'messages.html'
       }
     }
   }
