@@ -49,8 +49,11 @@ app.post('/handle_signup', (req, res) => {
     file.push(data);
     console.log(data)
     fs.writeFileSync('./databases/users.json', JSON.stringify(file))
-    fs.mkdirSync(`./databases/${data.id}`, {recursive:true})
-    fs.writeFileSync(`./databases/${data.id}/todos.json`, JSON.stringify([]))
+    fs.mkdirSync(`./databases/users/${data.id}`, {recursive:true})
+    fs.writeFileSync(`./databases/users/${data.id}/todos.json`, JSON.stringify({lists:[]}))
+    fs.writeFileSync(`./databases/users/${data.id}/members.json`, JSON.stringify([]))
+    fs.writeFileSync(`./databases/users/${data.id}/notifications.json`, JSON.stringify([]))
+    fs.writeFileSync(`./databases/users/${data.id}/chats.json`, JSON.stringify([]))
     res.send({status:true, id:data.id});
 })
 app.post('/handle_logout', (req, res) => { })
