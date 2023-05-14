@@ -9,7 +9,7 @@
                 "password":"string"
             }
         },
-        "userInfo":{
+        "users":{
             "type":"folder",
             "info":"Contains Indivisual User Information",
             "format":{
@@ -49,7 +49,7 @@
                 }
             }
         },
-        "chatInfo":{
+        "chats":{
             "type":"folder",
             "info":"Contains all chat",
             "format":[
