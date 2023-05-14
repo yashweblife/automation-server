@@ -9,3 +9,12 @@ export function checkLoginStatus(){
 window.addEventListener('load',()=>{
     checkLoginStatus();
 })
+
+
+export function get_current_user(){
+    const test = localStorage.getItem('user');
+    if(test !== 'undefined'){
+        return(test);
+    }
+    return(null);
+}
