@@ -1,45 +1,72 @@
-header{
-    background-color: rgb(32,32,32);
+header {
+    background-color: rgb(32, 32, 32);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding:0.2em 2em;
+    padding: 0.2em 2em;
+    color: white;
+    margin-bottom: 2em;
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+
+    button {
+        color: white;
+        outline: none;
+        border: 0;
+        background-color: rgb(61, 61, 61);
+        padding: 0.5em;
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+        border-radius: 0.5em;
+    }
 }
-section.list-view{
+
+section#list-view {
     display: flex;
     flex-direction: column;
-    padding:1em;
-    >.item{
-        margin:0.5em 0;
-        width:100%;
-        box-shadow: 0 0 1em 0 rgba(0,0,0,0.1);
-        padding:0.5em;
+    padding: 1em;
+
+    >.item {
+        margin: 0.5em 0;
+        width: 100%;
+        box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+        padding: 0.5em;
         border-radius: 0.5em;
-        .content{
+
+        .content {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            h4{
-                width:100%;
+            margin: 0.5em 0;
+
+            h4 {
+                width: 100%;
             }
-            nav{
-                width:100%;
+
+            nav {
+                width: 100%;
                 display: flex;
                 align-items: center;
-                button{
-                    width:100%;
-                    background-color: transparent;
-                    padding:0.2em;
-                    border:0;
+
+                button {
+                    width: 100%;
+                    background-color: rgb(32, 32, 32);
+                    color: white;
+                    padding: 0.2em;
+                    border: 0;
                     outline: none;
+                    margin: 0 0.5em;
+                    border-radius: 0.5em;
+                    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+
                 }
             }
         }
-        .footer{
+
+        .footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            p{
+
+            p {
                 font-size: 0.7em;
             }
         }
