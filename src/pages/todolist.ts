@@ -1,4 +1,5 @@
 import { get_current_user } from "../main";
+import "../styles/common.scss";
 import "../styles/todolist.scss";
 
 export interface TodoListItemInterface {
