@@ -24,50 +24,100 @@ section#list-view {
     flex-direction: column;
     padding: 1em;
 
-    >.item {
+    .main-item {
         margin: 0.5em 0;
         width: 100%;
         box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
         padding: 0.5em;
         border-radius: 0.5em;
-
-        .content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 0.5em 0;
-
-            h4 {
-                width: 100%;
-            }
-
-            nav {
-                width: 100%;
-                display: flex;
-                align-items: center;
-
-                button {
-                    width: 100%;
-                    background-color: rgb(32, 32, 32);
-                    color: white;
-                    padding: 0.2em;
-                    border: 0;
-                    outline: none;
-                    margin: 0 0.5em;
-                    border-radius: 0.5em;
-                    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
-
+        summary{
+            display:flex;
+            >.info{
+                width:100%;
+                .content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin: 0.5em 0;
+        
+                    h4 {
+                        width: 100%;
+                    }
+        
+                    nav {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+        
+                        button {
+                            width: 100%;
+                            background-color: rgb(32, 32, 32);
+                            color: white;
+                            padding: 0.2em;
+                            border: 0;
+                            outline: none;
+                            margin: 0 0.5em;
+                            border-radius: 0.5em;
+                            box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+        
+                        }
+                    }
+                }
+        
+                .footer {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+        
+                    p {
+                        font-size: 0.7em;
+                    }
                 }
             }
         }
-
-        .footer {
+        .list{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            p {
-                font-size: 0.7em;
+            flex-direction: column;
+            padding:0.2em;
+            >.item{
+                width:100%;
+                margin:0.5em 0;
+                border-bottom: 1px solid rgb(227, 227, 227);
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.1);
+                border-radius: 0.5em;
+                padding:0.5em;
+                >.header{
+                    display:flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width:100%;
+                    >nav{
+                        display: flex;
+                        align-items: center;
+                        width:50%;
+                        >button{
+                            width:100%;
+                            background-color: rgb(32, 32, 32);
+                            color:white;
+                            border-radius: 0.5em;
+                            margin: 0.1em;
+                            outline:none;
+                            border:0;
+                            padding:0.2em;
+                        }
+                    }
+                }
+                >.content{
+                    code{
+                        font-size: 0.4em;
+                        margin-bottom:0.5em;
+                    }
+                    p{
+                        font-size: 0.7em;
+                    }
+                }
             }
         }
     }
