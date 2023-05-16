@@ -10,7 +10,7 @@
     <header>
         <h1>TodoList's</h1>
         <nav>
-            <button id="add-new-todo-list">Add a new List</button>
+            <button id="toggle-add-todo-modal">Add a new List</button>
         </nav>
     </header>
     <section id="list-view">
@@ -87,7 +87,7 @@
             </div>
         </details>
     </section>
-    <div class="modal">
+    <div class="modal" id="add-todo-list-modal">
         <div class="card">
             <div class="header">
                 Add New TodoList
@@ -96,8 +96,8 @@
                 <input type="text" placeholder="Enter A Name">
             </div>
             <nav class="footer">
-                <button>Add</button>
-                <button>Discard</button>
+                <button id="add-new-todo-list">Add</button>
+                <button id="discard-todo-list-modal-button">Discard</button>
             </nav>
         </div>
     </div>
@@ -111,8 +111,8 @@
                 <input type="text" placeholder="Enter Some Info">
             </div>
             <nav class="footer">
-                <button>Add</button>
-                <button>Discard</button>
+                <button id="add-todo-button">Add</button>
+                <button id="discard-todo-modal-button">Discard</button>
             </nav>
         </div>
     </div>
