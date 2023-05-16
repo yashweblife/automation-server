@@ -107,9 +107,18 @@ function handle_delete_list(id: string) {
 
     })
 }
-
+ 
 
 const add_list_button = document.querySelector('#add-new-todo-list')!
+const toggle_add_todo_modal_button = document.querySelector('#toggle-add-todo-modal')!
+const discard_todolist_modal_button = document.querySelector('#toggle-add-todo-modal')!
+const discard_todo_modal_button = document.querySelector('#toggle-add-todo-modal')!
+const add_todolist_modal = document.querySelector('#add-todo-list-modal')!
+
+toggle_add_todo_modal_button.addEventListener('click',()=>{
+    add_todolist_modal.classList.toggle('open');
+})
+
 add_list_button.addEventListener('click',()=>{
     handle_add_list()
 })
