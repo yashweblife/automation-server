@@ -1,5 +1,5 @@
-import "../styles/index.scss";
-
+import "../styles/common.scss";
+import "../styles/home.scss";
 const logout_button:HTMLButtonElement = document.querySelector('#logout-button')!;
 
 logout_button.addEventListener('click',()=>{
