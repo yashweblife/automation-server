@@ -122,3 +122,11 @@ toggle_add_todo_modal_button.addEventListener('click',()=>{
 add_list_button.addEventListener('click',()=>{
     handle_add_list()
 })
+discard_todolist_modal_button.addEventListener('click',()=>{
+    add_todolist_modal.classList.toggle('open');
+})
+discard_todo_modal_button.addEventListener('click',()=>{
+    add_todolist_modal.classList.toggle('open');
+})
+
+
