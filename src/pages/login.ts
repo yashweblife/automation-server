@@ -1,3 +1,4 @@
+import "../styles/common.scss"
 import "../styles/login.scss"
 const login_form: HTMLElement = document.querySelector('#login-form')!
 const signup_form: HTMLElement = document.querySelector('#signup-form')!
