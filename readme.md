@@ -1,3 +1,12 @@
+### Content
+- Intro
+- Project Availablity
+- Project Desires
+- Premise
+- Resources
+- Get Started
+
+
 # Automation Server
 This is a full fledged express server that is meant to be used for home automation.
 Im hosting it over a RaspberryPI 4.
@@ -30,9 +39,9 @@ We are over dependent on 3rd party servers and services, if we can learn to eith
 - You need npm installed on your device
 
 
-For Installation
 
 ---
+For Installation
 
 `git clone https://github.com/yashweblife/automation-server.git`
 
@@ -45,3 +54,5 @@ For Installation
 For developement
 
 `npm run build`
+
+---
