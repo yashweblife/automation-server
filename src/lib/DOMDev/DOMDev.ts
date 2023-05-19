@@ -22,25 +22,25 @@ export class $ {
         this.dom.innerText = a;
         return (this)
     }
-    public setHTML(a:string){
+    public setHTML(a: string) {
         this.dom.innerHTML = a;
-        return(this)
+        return (this)
     }
-    public addChild(a:$){
+    public addChild(a: $) {
         this.dom.append(a.dom);
-        return(this)
+        return (this)
     }
-    public addChildren(a:$[]){
-        const vals = a.map((val:$)=>val.dom)
+    public addChildren(a: $[]) {
+        const vals = a.map((val: $) => val.dom)
         this.dom.append(...vals)
-        return(this)
+        return (this)
     }
-    public addEvent(a:string, b:(e:any)=>void){
-        this.dom.addEventListener('a',b);
-        return(this)
+    public addEvent(a: string, b: (e: any) => void) {
+        this.dom.addEventListener(a, b);
+        return (this)
     }
-    public addID(a:string){
+    public addID(a: string) {
         this.dom.id = a;
-        return(this)
+        return (this)
     }
 }
