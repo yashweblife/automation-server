@@ -1,19 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Home</title>
-</head>
-<body>
-    <header>
-        <h1>Dashboard</h1>
-        <nav>
-            <button id="logout-button">Logout</button>
-        </nav>
-    </header>
-    <script src="./src/main.ts" type="module"></script>
-    <script src="./src/pages/home.ts" type="module"></script>
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <title>Automation Home</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Dashboard</h1>
+            <nav>
+                <button id="logout-button">Logout</button>
+            </nav>
+        </header>
+        <main>
+            <div class="card">
+                <h4>Todos</h4>
+                <p>3</p>
+                <button>
+                    <ion-icon></ion-icon>
+                </button>
+            </div>
+            <div class="card">
+                <h4>Notifications</h4>
+                <p>6</p>
+            </div>
+            <div class="card">
+                <h4>Messages</h4>
+                <p>1</p>
+            </div>
+        </main>
+        <script src="./src/main.ts" type="module"></script>
+        <script src="./src/pages/home.ts" type="module"></script>
+    </body>
+
 </html>
