@@ -15,24 +15,52 @@
         <header>
             <h1>Dashboard</h1>
             <nav>
-                <button id="logout-button">Logout</button>
+                <button id="logout-button" class="circle center pa-3 dark-2">
+                    <ion-icon name="log-out-outline"></ion-icon>
+                </button>
             </nav>
         </header>
         <main>
-            <div class="card">
-                <h4>Todos</h4>
-                <p>3</p>
-                <button>
-                    <ion-icon></ion-icon>
-                </button>
-            </div>
-            <div class="card">
-                <h4>Notifications</h4>
-                <p>6</p>
-            </div>
-            <div class="card">
-                <h4>Messages</h4>
-                <p>1</p>
+            <div class="list pa-3">
+                <div class="card pa-3 mt-3 shadow">
+                    <hgroup class="dir-2 align-center justify-between child-max-width">
+                        <h4>Todos</h4>
+                        <p>3</p>
+                        <nav>
+                            <a href="/todolist.html">
+                                <button class="circle center pa-3 dark-2">
+                                    <ion-icon name="caret-forward-outline"></ion-icon>
+                                </button>
+                            </a>
+                        </nav>
+                    </hgroup>
+                </div>
+                <div class="card pa-3 mt-3 shadow">
+                    <hgroup class="dir-2 align-center justify-between child-max-width">
+                        <h4>Notifications</h4>
+                        <p>6</p>
+                        <nav>
+                            <a href="/todolist.html">
+                                <button class="circle center pa-3 dark-2">
+                                    <ion-icon name="caret-forward-outline"></ion-icon>
+                                </button>
+                            </a>
+                        </nav>
+                    </hgroup>
+                </div>
+                <div class="card pa-3 mt-3 shadow">
+                    <hgroup class="dir-2 align-center justify-between child-max-width">
+                        <h4>Messages</h4>
+                        <p>1</p>
+                        <nav>
+                            <a href="/messages.html">
+                                <button class="circle center pa-3 dark-2">
+                                    <ion-icon name="caret-forward-outline"></ion-icon>
+                                </button>
+                            </a>
+                        </nav>
+                    </hgroup>
+                </div>
             </div>
         </main>
         <script src="./src/main.ts" type="module"></script>
