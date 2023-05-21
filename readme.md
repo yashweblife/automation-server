@@ -38,8 +38,6 @@ We are over dependent on 3rd party servers and services, if we can learn to eith
 ## Start working
 - You need npm installed on your device
 
-
-
 ---
 For Installation
 
