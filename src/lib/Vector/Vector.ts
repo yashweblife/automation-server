@@ -36,4 +36,25 @@ export class Vector{
         }
         return(this)
     }
+    public distance(v:Vector){
+        let output = 0;
+        for(let i=0;i<this.length;i++){
+            output += this.components[i] - v.components[i]
+        }
+        return(Math.sqrt(output))
+    }
+    public dot(v:Vector){
+        let output = 0
+        for(let i=0;i<this.length;i++){
+            output += this.components[i] * v.components[i]
+        }
+        return(output)
+    }
+    public lerp(v:Vector, t:number){
+        const output:Vector = new Vector(this.length)
+        for(let i=0;i<this.length;i++){
+            output.components[i] = this.components[i]+(v.components[i]-this.components[i])*t
+        }
+        return(output);
+    }
 }
