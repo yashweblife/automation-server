@@ -17,6 +17,18 @@ export class Vector {
         }
         return (this)
     }
+    public multiply(v: Vector) {
+        for (let i = 0; i < this.length; i++) {
+            this.components[i] *= v.components[i]
+        }
+        return (this)
+    }
+    public scalar(val: number) {
+        for (let i = 0; i < this.length; i++) {
+            this.components[i] *= val;
+        }
+        return (this)
+    }
     public magnitude() {
         let output = 0;
         for (let i = 0; i < this.length; i++) {
@@ -64,37 +76,46 @@ export class Vector {
         }
         return (output)
     }
-    public static getRandom(size:number, mag:number){
+    public static getRandom(size: number, mag: number) {
         const output = new Vector(size);
-        for(let i=0;i<size;i++){
-            output.components[i] = Math.random()*mag
+        for (let i = 0; i < size; i++) {
+            output.components[i] = Math.random() * mag
         }
-        return(output)
+        return (output)
     }
-    public static getAdd(a:Vector,b:Vector){
+    public static getAdd(a: Vector, b: Vector) {
         const output = new Vector(a.length);
-        for(let i=0;i<output.length;i++){
+        for (let i = 0; i < output.length; i++) {
             output.components[i] = a.components[i] + b.components[i]
         }
-        return(output)
+        return (output)
     }
-    public static getSub(a:Vector,b:Vector){
+    public static getSub(a: Vector, b: Vector) {
         const output = new Vector(a.length);
-        for(let i=0;i<output.length;i++){
+        for (let i = 0; i < output.length; i++) {
             output.components[i] = a.components[i] - b.components[i]
         }
-        return(output)
+        return (output)
     }
-    public static getNormalized(a:Vector){
+    public static getNormalized(a: Vector) {
         const output = new Vector(a.length);
         let mag = 0;
-        for(let i=0;i<output.length;i++){
-            mag += a.components[i]**2
+        for (let i = 0; i < output.length; i++) {
+            mag += a.components[i] ** 2
         }
-        mag=Math.sqrt(mag);
-        for(let i=0;i<output.length;i++){
-            output.components[i] = a.components[i]/mag
+        mag = Math.sqrt(mag);
+        for (let i = 0; i < output.length; i++) {
+            output.components[i] = a.components[i] / mag
         }
-        return(output)
+        return (output)
+    }
+    public getAverage(a: Vector[]) {
+        const output = new Vector(a[0].length);
+        for (let i = 0; i < a.length; i++) {
+            const b = a[i]
+            output.add(b);
+        }
+        output.scalar(a.length);
+
     }
 }
