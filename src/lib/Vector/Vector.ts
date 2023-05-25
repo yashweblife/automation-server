@@ -1,60 +1,100 @@
-export class Vector{
-    public components:Float32Array;
-    public length:number=3;
-    constructor(size:number){
+export class Vector {
+    public components: Float32Array;
+    public length: number = 3;
+    constructor(size: number) {
         this.components = new Float32Array(size);
         this.length = size;
     }
-    public add(v:Vector){
-        for(let i=0;i<this.length;i++){
-            this.components[i]+=v.components[i]
+    public add(v: Vector) {
+        for (let i = 0; i < this.length; i++) {
+            this.components[i] += v.components[i]
         }
-        return(this)
+        return (this)
     }
-    public subtract(v:Vector){
-        for(let i=0;i<this.length;i++){
-            this.components[i]-=v.components[i]
+    public subtract(v: Vector) {
+        for (let i = 0; i < this.length; i++) {
+            this.components[i] -= v.components[i]
         }
-        return(this)
+        return (this)
     }
-    public magnitude(){
+    public magnitude() {
         let output = 0;
-        for(let i=0;i<this.length;i++){
-            output += this.components[i]*this.components[i]
+        for (let i = 0; i < this.length; i++) {
+            output += this.components[i] * this.components[i]
         }
-        return(Math.sqrt(output))
+        return (Math.sqrt(output))
     }
-    public normalize(magnitude:number){
+    public normalize(magnitude: number) {
         let mag = 0;
-        for(let i=0;i<this.length;i++){
-            mag += this.components[i]*this.components[i]
-            this.components[i]*=magnitude;
+        for (let i = 0; i < this.length; i++) {
+            mag += this.components[i] * this.components[i]
+            this.components[i] *= magnitude;
         }
         mag = Math.sqrt(mag)
-        for(let i=0;i<this.length;i++){
-            this.components[i]/=mag;
+        for (let i = 0; i < this.length; i++) {
+            this.components[i] /= mag;
         }
-        return(this)
+        return (this)
     }
-    public distance(v:Vector){
+    public distance(v: Vector) {
         let output = 0;
-        for(let i=0;i<this.length;i++){
-            output += this.components[i] - v.components[i]
+        for (let i = 0; i < this.length; i++) {
+            output += (this.components[i] - v.components[i]) ** 2
         }
-        return(Math.sqrt(output))
+        return (Math.sqrt(output))
     }
-    public dot(v:Vector){
+    public dot(v: Vector) {
         let output = 0
-        for(let i=0;i<this.length;i++){
+        for (let i = 0; i < this.length; i++) {
             output += this.components[i] * v.components[i]
+        }
+        return (output)
+    }
+    public lerp(v: Vector, t: number) {
+        const output: Vector = new Vector(this.length)
+        for (let i = 0; i < this.length; i++) {
+            output.components[i] = this.components[i] + (v.components[i] - this.components[i]) * t
+        }
+        return (output);
+    }
+    public copy() {
+        const output = new Vector(this.length);
+        for (let i = 0; i < this.length; i++) {
+            output.components[i] = this.components[i];
+        }
+        return (output)
+    }
+    public static getRandom(size:number, mag:number){
+        const output = new Vector(size);
+        for(let i=0;i<size;i++){
+            output.components[i] = Math.random()*mag
         }
         return(output)
     }
-    public lerp(v:Vector, t:number){
-        const output:Vector = new Vector(this.length)
-        for(let i=0;i<this.length;i++){
-            output.components[i] = this.components[i]+(v.components[i]-this.components[i])*t
+    public static getAdd(a:Vector,b:Vector){
+        const output = new Vector(a.length);
+        for(let i=0;i<output.length;i++){
+            output.components[i] = a.components[i] + b.components[i]
         }
-        return(output);
+        return(output)
+    }
+    public static getSub(a:Vector,b:Vector){
+        const output = new Vector(a.length);
+        for(let i=0;i<output.length;i++){
+            output.components[i] = a.components[i] - b.components[i]
+        }
+        return(output)
+    }
+    public static getNormalized(a:Vector){
+        const output = new Vector(a.length);
+        let mag = 0;
+        for(let i=0;i<output.length;i++){
+            mag += a.components[i]**2
+        }
+        mag=Math.sqrt(mag);
+        for(let i=0;i<output.length;i++){
+            output.components[i] = a.components[i]/mag
+        }
+        return(output)
     }
 }
