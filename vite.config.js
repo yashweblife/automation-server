@@ -1,15 +1,15 @@
 import { defineConfig } from "vite"
 export default defineConfig({
-  server:{
-    port:3000
+  server: {
+    port: 3000
   },
-  build:{
-    rollupOptions:{
-      input:{
-        index:'index.html',
-        home:'home.html',
-        todolist:'todolist.html',
-        messages:'messages.html'
+  build: {
+    rollupOptions: {
+      input: {
+        index: 'index.html',
+        home: 'home.html',
+        todolist: 'todolist.html',
+        messages: 'messages.html'
       }
     }
   }
