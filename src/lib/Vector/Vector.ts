@@ -120,4 +120,10 @@ export class Vector {
     public getRotateX(a:Vector, b:number){
         const output = new Vector(a.length)
     }
+    public getRotateY(a:Vector, b:number){
+        const output = new Vector(a.length)
+    }
+    public getRotateZ(a:Vector, b:number){
+        const output = new Vector(a.length)
+    }
 }
