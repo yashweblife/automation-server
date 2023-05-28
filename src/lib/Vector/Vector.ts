@@ -116,6 +116,8 @@ export class Vector {
             output.add(b);
         }
         output.scalar(a.length);
-
+    }
+    public getRotateX(a:Vector, b:number){
+        const output = new Vector(a.length)
     }
 }
